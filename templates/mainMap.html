@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_276e56aa9cd74b33bd6a0670e1f0f5ca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_276e56aa9cd74b33bd6a0670e1f0f5ca" ></div>
+        
+</body>
+<script>    
+    
+            var map_276e56aa9cd74b33bd6a0670e1f0f5ca = L.map(
+                "map_276e56aa9cd74b33bd6a0670e1f0f5ca",
+                {
+                    center: [18.9891659, 73.1212219],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5777d05caf5f416f8a7a185539e77562 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_276e56aa9cd74b33bd6a0670e1f0f5ca);
+        
+    
+            var marker_3fe7073d8437489f9b038bc395018acc = L.marker(
+                [18.9891659, 73.1212219],
+                {}
+            ).addTo(map_276e56aa9cd74b33bd6a0670e1f0f5ca);
+        
+    
+        var popup_507086ad1e954d0c87697894e3b8b04a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2d5a9179c5f246d0a8136745e8ae4e54 = $(`<div id="html_2d5a9179c5f246d0a8136745e8ae4e54" style="width: 100.0%; height: 100.0%;">panvel railway station</div>`)[0];
+            popup_507086ad1e954d0c87697894e3b8b04a.setContent(html_2d5a9179c5f246d0a8136745e8ae4e54);
+        
+
+        marker_3fe7073d8437489f9b038bc395018acc.bindPopup(popup_507086ad1e954d0c87697894e3b8b04a)
+        ;
+
+        
+    
+    
+            marker_3fe7073d8437489f9b038bc395018acc.bindTooltip(
+                `<div>
+                     Your location
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e28948101bcc4ae2965020cda0b578ec = L.marker(
+                [19.0180011, 72.8443808],
+                {}
+            ).addTo(map_276e56aa9cd74b33bd6a0670e1f0f5ca);
+        
+    
+        var popup_7a8d64408f9e405fb723ba196d45529a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dc73bc5f80e44eaa824f27d6f92a89a5 = $(`<div id="html_dc73bc5f80e44eaa824f27d6f92a89a5" style="width: 100.0%; height: 100.0%;">dadar station mumbai</div>`)[0];
+            popup_7a8d64408f9e405fb723ba196d45529a.setContent(html_dc73bc5f80e44eaa824f27d6f92a89a5);
+        
+
+        marker_e28948101bcc4ae2965020cda0b578ec.bindPopup(popup_7a8d64408f9e405fb723ba196d45529a)
+        ;
+
+        
+    
+    
+            marker_e28948101bcc4ae2965020cda0b578ec.bindTooltip(
+                `<div>
+                     Fellow traveler location
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

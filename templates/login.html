@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>/aRide</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	{% if login_error %}
+	<div class="alert-danger" role="alert">
+		<strong>{{ login_error }}</strong>
+	</div>
+	{% endif %}
+
+	{% if not login_error %}
+	<div class="alert-danger" role="alert">
+		<strong>You have successfully Loged Out</strong>
+	</div>
+	{% endif %}
+
+	{% if register_error %}
+	<div class="alert-danger" role="alert">
+		<strong>{{register_error}}</strong>
+	</div>
+	{% endif %}
+
+	<div class="container">
+
+		<div class="login-content">
+			<form action="{{url_for('login')}}" method="post">
+				<img src="{{ url_for('static', filename='img/avatar.svg')}}">
+				<h3 class="title">Login</h3>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<input type="text" class="input" placeholder="Username" name="username" required />
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<input type="password" class="input" placeholder="Password" name="password" required />
+					</div>
+				</div>
+				<input type="submit" class="btn" value="Login">
+				<a class="reg_link" href="/register">
+					<h3>Register</h3>
+					<a />
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js')}}" />
+</body>
+
+</html>

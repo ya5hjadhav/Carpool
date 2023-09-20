@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/aRide</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+
+</head>
+
+<body>
+
+  {% if location_error %}
+  <div class="alert-danger" role="alert">
+    <strong>{{location_error}}</strong>
+  </div>
+  {% endif %}
+
+  <div class="login-content">
+    <a href='/login'><img src="{{ url_for('static', filename='img/avatar.svg')}}"
+        style="width: 70px;padding-left: 15px;padding-top: 5px;"></a>
+    <h2 class="title" style="padding: 10px;">{{ userID }}</h2>
+    <h2 style="margin-left: auto;padding-right: 80px;color: darkorange;font-size: 35px;width: auto;height: auto;">/aRide</h2>
+  </div>
+
+  {% if userID %}
+    <a class="reg_link" href="/modify/">
+      <h3>Modify</h3>
+    </a>
+  {% endif %}
+
+  {% if not searchQuery %}
+  <h1>Enter your Destination for today's journey</h1>
+
+  <!-- SEARCHBAR -->
+  <form class="searchFrm" id="search_form" action="{{url_for('home')}}" method="post">
+    <div class="bar_contener">
+      <fieldset>
+        <input class="bar" type="text" name="search" required />
+        <div class="send_cont" onclick="document.getElementById('search_form').submit();">
+          <div class="arrow_part_1"></div>
+          <div class="arrow_part_2"></div>
+          <div class="arrow_part_3"></div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="tail_cont">
+      <div class="tail"></div>
+    </div>
+  </form>
+  {% endif %}
+
+
+  {% if searchQuery %}
+  <div class="content" style="margin-top: 170px;margin-bottom: -170px;margin-left: 260px;margin-right: -260px;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Co-Travellers Location</th>
+          <th>User Type</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for each in record %}
+        <tr>
+          <td><span>{{ each['gender'] }}</span></td>
+          <td><span>{{ each['age'] }}</span></td>
+          <td><span>{{ each['from_loc'] }}</span></td>
+          <td><span>{{ each['type'] }}</span></td>
+          <td>
+            <a href="/details?connectId={{ each['_id'] }}"><button class="my-button">Get</button></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</body>
+
+
+</html>

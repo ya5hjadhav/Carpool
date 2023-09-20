@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-content">
+            <form action='{{url_for("modify")}}' method="post">
+                <img src="{{ url_for('static', filename='img/avatar.svg')}}">
+                <h2 class="title">Modify Details</h2>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="div">
+                        <input type="text" class="input" placeholder="Traveller/Owner" name="user_type"  />
+                    </div>
+                </div>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="div">
+                        <input type="text" class="input" placeholder="Age" name="age"  />
+                    </div>
+                </div>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="div">
+                        <input type="email" class="input" placeholder="Email" name="email"  />
+                    </div>
+                </div>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="div">
+                        <input type="tel" class="input" placeholder="Phone" name="phone" />
+                    </div>
+                </div>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-map-marker"></i>
+                    </div>
+                    <div class="div">
+                        <input type="text" class="input" placeholder="From: Chembur Railway Station" name="from"
+                             />
+                    </div>
+                </div>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-location-arrow"></i>
+                    </div>
+                    <div class="div">
+                        <input type="text" class="input" placeholder="To: Panvel Orient Mall" name="to"  />
+                    </div>
+                </div>
+
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <input type="password" class="input" placeholder="password" name="password"  />
+                    </div>
+                </div>
+                
+                <input type="submit" class="btn" value="modify">
+
+                <a class="cancel" href="/">
+                    <h3>Cancel</h3>
+                </a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js')}}" />
+</body>
+
+</html>
